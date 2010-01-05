@@ -11,7 +11,8 @@ class IntegrationTest {
 		unless(file.exists) {
 			fail(
 				"Frightfully sorry, but you haven't configured your consumer information. " +
-				"Ensure you have the file <" + CREDENTIAL_FILE + "> available."
+				"Ensure you have the file <" + CREDENTIAL_FILE + "> available, " +
+				"and it contains your 7digital API consumer details."
 			)
 		}
 
