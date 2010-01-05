@@ -22,7 +22,7 @@ class IntegrationTest {
 
 	protected var consumer : Credential = null
 
-	protected def unless(what : Boolean)(`do` : => Unit) = if (what) {
+	protected def unless(what : Boolean)(`do` : => Unit) = if (false == what) {
 		`do`
 	}
 }

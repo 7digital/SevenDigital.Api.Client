@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
 <sevendigital.api>
+    <!-- 1. Fill in your details -->
     <consumer key="YOUR_KEY_HERE" secret="YOUR_SECRET_HERE" />
+    <!-- 2. Then rename file to 'consumer.xml' -->
 </sevendigital.api>
