@@ -32,8 +32,8 @@ class Public extends IntegrationTest {
 	private def sign(uri : URI) = {
 		require(consumer != null, "The consumer has not been set")
 		
-		val timestamp 	= new SystemTimestampFactory() createTimestamp
-		val nonce 		= new SystemNonceFactory() createNonce
+		val timestamp 	= new SystemTimestampFactory() newTimestamp
+		val nonce 		= new SystemNonceFactory() newNonce
 		
 		new SignedUri(
             uri,
