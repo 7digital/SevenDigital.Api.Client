@@ -32,14 +32,11 @@ class Public extends IntegrationTest {
 	private def sign(uri : URI) = {
 		require(consumer != null, "The consumer has not been set")
 		
-		val timestamp 	= new SystemTimestampFactory() newTimestamp
-		val nonce 		= new SystemNonceFactory() newNonce
-		
 		new SignedUri(
             uri,
             CredentialSet(forConsumer(consumer), andNoToken),
-            timestamp,
-            nonce,
+			new SystemTimestampFactory() newTimestamp,
+			new SystemNonceFactory() newNonce,
             Options DEFAULT
         ).value
 	}
@@ -47,6 +44,6 @@ class Public extends IntegrationTest {
 	private def get(uri : URI) = new RestCommand() get(uri)
 
 	private val BROWSE_ARTIST_A = new URI(
-		"http://api.7digital.com/sandbox/1.2/artist/browse?letter=a&country=GB"
+		"http://api.7digital.com/1.2/artist/browse?letter=a&country=GB"
 	)
 }
