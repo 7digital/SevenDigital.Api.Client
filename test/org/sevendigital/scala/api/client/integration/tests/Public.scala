@@ -4,7 +4,6 @@ import org.junit.Assert._
 import org.hamcrest.core.Is._
 import org.hamcrest.core.IsNot._
 import org.hamcrest.core.IsEqual._
-import org.sevendigital.scala.api.client.http.simple.RestCommand
 import java.net.URI
 import org.apache.http.HttpStatus
 import org.coriander.oauth.core.timestamp.SystemTimestampFactory
@@ -12,8 +11,9 @@ import org.coriander.oauth.core.nonce.SystemNonceFactory
 import org.coriander.oauth.core.{Options, CredentialSet, SignedUri}
 import org.coriander.oauth.core.CredentialSet._
 import org.junit.Test
+import org.sevendigital.scala.api.client.http.simple.TheInternet
 
-class Public extends IntegrationTest {
+class Public extends IntegrationTestFixture {
 	@Test
 	def given_a_valid_consumer_then_I_can_access_the_api {
 		given_a_valid_7digital_consumer
@@ -41,7 +41,7 @@ class Public extends IntegrationTest {
         ).value
 	}
 
-	private def get(uri : URI) = new RestCommand() get(uri)
+	private def get(uri : URI) = new TheInternet() get(uri)
 
 	private val BROWSE_ARTIST_A = new URI(
 		"http://api.7digital.com/1.2/artist/browse?letter=a&country=GB"

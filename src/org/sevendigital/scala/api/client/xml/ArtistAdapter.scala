@@ -9,7 +9,7 @@ class ArtistAdapter(xml : Elem) {
 	def toArtist = {
 		require(xml != null, "Unable to convert null reference.")
 
-		val id = Integer.parseInt(xml.attribute("id").get.first.text)
+		val id = Integer.parseInt(xml.attribute("id").get text)
 
 		val name = this toName xml
 		
