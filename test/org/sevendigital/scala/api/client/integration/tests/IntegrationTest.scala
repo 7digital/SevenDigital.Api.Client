@@ -8,7 +8,7 @@ class IntegrationTest {
 	protected def given_a_valid_7digital_consumer {
 		val file = new File(CREDENTIAL_FILE).getCanonicalFile
 
-		unless(file.exists) {
+		unless (file.exists) {
 			fail(
 				"Frightfully sorry, but you haven't configured your consumer information. " +
 				"Ensure you have the file <" + CREDENTIAL_FILE + "> available, " +
